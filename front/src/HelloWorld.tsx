@@ -1,5 +1,8 @@
 import React from 'react';
 
+export async function getName(nameCall:string):Promise<Response>{
+    return await fetch(`http://localhost:3030/hello/${nameCall}`);
+}
 
 interface HelloWorldProps {
     name: string;
@@ -16,8 +19,3 @@ function HelloWorld({ name }: HelloWorldProps) {
 export default HelloWorld;
 
 
-async function getName(nameCall:string):string{
-    fetch(`http://localhost/hello/${nameCall}`)
-        .then( res  => res.json())
-        .then( (result) => )
-}
