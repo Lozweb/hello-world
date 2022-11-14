@@ -10,6 +10,8 @@ COPY tsconfig.json ./
 COPY src/ ./src/
 COPY public/ ./public/
 
+RUN npm run build
+
 FROM node:16-alpine
 
 WORKDIR /app
@@ -17,8 +19,6 @@ WORKDIR /app
 RUN npm install -g serve
 
 COPY --from=builder /app/build/ ./build/
-
-RUN npm run build
 
 EXPOSE 3000
 
