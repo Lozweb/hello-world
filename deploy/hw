@@ -1,0 +1,24 @@
+#!/bin/bash
+
+start() {
+  docker compose -f hello-word.yml -p hello-world up -d --build
+}
+
+stop() {
+  docker compose -p hello-world down
+}
+
+case ${1} in
+
+  start)
+    start
+    ;;
+
+  stop)
+    stop
+    ;;
+  
+  *)
+    echo "Usage: start | stop"
+    ;;
+esac

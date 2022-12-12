@@ -16,6 +16,8 @@ RUN cargo build --target x86_64-unknown-linux-musl --release
 
 COPY src/ ./src/
 
+RUN touch ./src/main.rs
+
 RUN cargo build --target x86_64-unknown-linux-musl --release
 
 FROM scratch

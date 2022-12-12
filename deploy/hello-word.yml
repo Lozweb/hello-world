@@ -1,0 +1,13 @@
+services:
+  
+  front:
+    build: ../front
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+
+  back:
+    build: ../back
+    ports:
+      - 3030:3030
+    restart: unless-stopped
